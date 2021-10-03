@@ -134,9 +134,17 @@
                 </div>
             </div>
         </div> -->
-
-        <div id="divDinamico"></div>
-        <div id="carrito"></div>
+        <div class="dropdown d-flex justify-content-end">
+            <button class="btn btn-outline-dark dropdown-toggle mr-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Carrito<span id="carritoCantidad" class="badge badge-light">0</span></button>
+            <div id="carrito" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <!-- Acá se genera el carrito -->
+            </div>
+        </div>
+        <div id="espera" class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>
+        <div id="divDinamico">
+            <!-- Acá se generan los productos -->
+        </div>
+        
 
 
 
@@ -188,7 +196,7 @@
             integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
             crossorigin="anonymous"></script>
         <script src="../js/jquery.min.js"></script>
-        <script src="../js/owl.carousel.min.js"></script>
+        <!-- <script src="../js/owl.carousel.min.js"></script>
         <script>$(document).ready(function () {
             $(".owl-carousel").owlCarousel(
                 {
@@ -214,7 +222,7 @@
                 }
             );
            
-        });</script>
+        });</script> -->
         <script src="../js/main.js"></script>
     </body>
 </html>
