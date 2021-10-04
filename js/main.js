@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $(".btn-compra").on('click', comprarServicio);
+    $(".btn-compra").click(comprarServicio);
 });
 
 $(window).on('load',function () {
@@ -14,6 +14,13 @@ class Servicio {
         this.price = precioContado;
         this.img = img;
         this.descripcion = descripcion;
+        this.cantidad = 1;
+    }
+    subtotal(){
+        return this.cantidad * this.price;
+    }
+    agregarCantidad(valor){
+        this.cantidad += valor;
     }
 }
 const servicios = [];
@@ -43,8 +50,14 @@ const carritoDeCompras = []
 function comprarServicio(e) {
     e.preventDefault();
     const idServicio = e.target.id;
-    const seleccionado = servicios.find(elemento => elemento.id == idServicio)
-    carritoDeCompras.push(seleccionado);
+    const existe = carritoDeCompras.find(elemento => elemento.id == idServicio)
+    if (existe == undefined) {
+        carritoDeCompras.push(servicios.find(elemento => elemento.id == idServicio));
+        
+    }
+    else{
+        existe.agregarCantidad(1);
+    }
     carritoUI(carritoDeCompras);
 }
 
@@ -52,9 +65,6 @@ function carritoUI(servicios) {
     $("#carritoCantidad").html(servicios.length);
     $('#carrito').empty();
     for (const servicio of servicios) {
-        $('#carrito').append(`<p> ${servicio.name} <span class="badge badge-warning">$${servicio.price}</span></p>`);   
+        $('#carrito').append(`<p> ${servicio.name} <span class="badge badge-warning">$${servicio.price}</span><span class="badge badge-warning">Cantidad: ${servicio.cantidad}</span><span class="badge badge-warning">Subtotal $${servicio.subtotal()}</span></p>`);   
     }
 }
-
-
-
