@@ -68,3 +68,5 @@ function carritoUI(servicios) {
         $('#carrito').append(`<p> ${servicio.name} <span class="badge badge-warning">$${servicio.price}</span><span class="badge badge-warning">Cantidad: ${servicio.cantidad}</span><span class="badge badge-warning">Subtotal $${servicio.subtotal()}</span></p>`);   
     }
 }
+
+
