@@ -53,19 +53,18 @@ function serviciosUI(servicios, id){
                                             </div>
                                         </div>
                                     </div>`);
+                                    $(document).ready(function(){
+                                        $(`#${servicio.id}`).on('click',function(){
+                                            comprarServicio(`${servicio.id}`)
+                                        });
+                                    });
     };
-    $document.ready(function(){
-        $(`#${servicio.id}`).on('click',function(){
-            comprarServicio(`${servicio.id}`)
-        });
-    });
   }
 
 const carritoDeCompras = []
 
-function comprarServicio(e) {
-    e.preventDefault();
-    const idServicio = e.target.id;
+function comprarServicio(id) {
+    const idServicio = id;
     const existe = carritoDeCompras.find(elemento => elemento.id == idServicio)
     if (existe == undefined) {
         carritoDeCompras.push(servicios.find(elemento => elemento.id == idServicio));

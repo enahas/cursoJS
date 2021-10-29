@@ -13,8 +13,11 @@ class Cliente {
 const clientes = [];
 
 $('#submitBtn').click(function(e){
-    e.preventDefault;
+    e.preventDefault();
     $('#ventanaModal').modal();
 });
 
+$('#cerrarModal').click(function () {
+    $('#resetForm').click()
+})
 
