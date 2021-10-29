@@ -12,7 +12,8 @@ class Cliente {
 }
 const clientes = [];
 
-$('#submitBtn').click(function(){
+$('#submitBtn').click(function(e){
+    e.preventDefault;
     $('#ventanaModal').modal();
 });
 

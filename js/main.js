@@ -54,6 +54,11 @@ function serviciosUI(servicios, id){
                                         </div>
                                     </div>`);
     };
+    $document.ready(function(){
+        $(`#${servicio.id}`).on('click',function(){
+            comprarServicio(`${servicio.id}`)
+        });
+    });
   }
 
 const carritoDeCompras = []
