@@ -39,7 +39,7 @@ $.get("../data/servicios.json", function (respuesta, estado) {
 function serviciosUI(servicios, id){
     $(id).empty();
     for (const servicio of servicios) {
-        $('#divDinamico').append(`<div class="container d-none d-sm-none d-md-block">
+        $('#divDinamico').append(`<div class="container d-md-block">
                                         <div class="row align-items-center m-5">
                                             <div class="col-lg-4 col-xs-12">
                                                 <img src=${servicio.img} class="logoServicios img-fluid">
