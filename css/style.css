@@ -174,7 +174,7 @@ footer{
 #divAnimacion{display: none}
 
 /* vista mobile */
-
+/* 
 @media only screen and (max-width: 767px){
     .textoPrincipalConFondo{
         color:white;
@@ -200,5 +200,5 @@ footer{
         display: flex;
         justify-content: center;
     }
-}
+} */
 
