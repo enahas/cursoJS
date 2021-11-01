@@ -61,7 +61,7 @@ function serviciosUI(servicios, id){
     };
   }
 
-const carritoDeCompras = []
+let carritoDeCompras = []
 
 function comprarServicio(id) {
     const idServicio = id;
@@ -90,6 +90,14 @@ function enviarCompra() {
       if(estado == "success"){
         $('#carrito').empty();
         $('#carritoCantidad').html("0");
+        carritoDeCompras = [];
+        localStorage.clear()
+        Swal.fire({
+            icon: 'success',
+            title: 'Ok',
+            text: 'Compra Realizada!',
+            footer: '<p>N° de Orden : 5465454sd5vv54654</p>'
+          })
       }else{
         console.log('Los datos no se enviaron correctamente');
       }    
