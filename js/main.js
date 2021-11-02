@@ -85,7 +85,7 @@ function enviarCompra() {
             $('#carrito').empty();
             $('#carritoCantidad').html("0");
             carritoDeCompras = [];
-            localStorage.clear()
+            localStorage.clear();
             Swal.fire({
                 icon: 'success',
                 title: 'Ok',
